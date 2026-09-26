@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.12" />
+    <PackageReference Include="SQLite" Version="3.53.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Forms\FormCreateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormManageUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormSignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormEditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
+</Project>
