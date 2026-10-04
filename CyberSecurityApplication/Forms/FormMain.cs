@@ -87,6 +87,10 @@ public partial class FormMain : Form
         infoItem.Click += OnInfoClick;
         commonMenu.DropDownItems.Add(infoItem);
 
+        var hashFileItem = new ToolStripMenuItem("Hash File");
+        hashFileItem.Click += OnSha1HashClick;
+        commonMenu.DropDownItems.Add(hashFileItem);
+
         var exitItem = new ToolStripMenuItem("Exit");
         exitItem.Click += OnExitClick;
         commonMenu.DropDownItems.Add(exitItem);
@@ -94,12 +98,18 @@ public partial class FormMain : Form
         menuStrip.Items.Add(commonMenu);
     }
 
-    #region Обработчики событий (заглушки)
+    #region Обработчики событий
 
     private void OnAdminChangePasswordClick(object? sender, EventArgs e)
     {
         using var changePasswordForm = new FormChangePassword(_userRepository, _currentUser);
         changePasswordForm.ShowDialog();
+    }
+
+    private void OnSha1HashClick(object? sender, EventArgs e)
+    {
+        using var sha1Form = new HashFile();
+        sha1Form.ShowDialog();
     }
 
     private void OnUserChangePasswordClick(object? sender, EventArgs e)
