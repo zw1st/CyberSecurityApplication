@@ -155,7 +155,7 @@ public static class Sha1Hasher
     {
         byte[] messageBytes = Encoding.UTF8.GetBytes(text);
         return HashBytes(messageBytes);
-    }
+    }   
 
     #region Вспомогательные методы
 
@@ -179,7 +179,7 @@ public static class Sha1Hasher
             ms.WriteByte(0x80);
 
             // Добавляем нулевые байты, пока длина не станет ≡ 56 (mod 64)
-            // 56 байт = 448 бит, что соответствует формуле 512*N + 448
+            // 56 байт = 448 бит
             while (ms.Length % 64 != 56)
             {
                 ms.WriteByte(0x00);
