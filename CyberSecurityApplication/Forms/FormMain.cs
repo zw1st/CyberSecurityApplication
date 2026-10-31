@@ -91,6 +91,10 @@ public partial class FormMain : Form
         hashFileItem.Click += OnSha1HashClick;
         commonMenu.DropDownItems.Add(hashFileItem);
 
+        var cipherFileItem = new ToolStripMenuItem("Cipher File");
+        cipherFileItem.Click += OnCipherClick;
+        commonMenu.DropDownItems.Add(cipherFileItem);
+
         var exitItem = new ToolStripMenuItem("Exit");
         exitItem.Click += OnExitClick;
         commonMenu.DropDownItems.Add(exitItem);
@@ -110,6 +114,12 @@ public partial class FormMain : Form
     {
         using var sha1Form = new HashFile();
         sha1Form.ShowDialog();
+    }
+
+    private void OnCipherClick(object? sender, EventArgs e)
+    {
+        using var cipherForm = new FormMagma();
+        cipherForm.ShowDialog();
     }
 
     private void OnUserChangePasswordClick(object? sender, EventArgs e)
